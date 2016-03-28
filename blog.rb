@@ -15,9 +15,10 @@ end
 class Blog 
 	attr_reader :blogger, :posts
 
-	def initialize (blogger, posts)
+	def initialize (blogger, posts, postsperpage)
 		@blogger = blogger
 		@posts = []
+		@postsperpage = 3
 	end
 
 	def publish (post)
@@ -30,6 +31,11 @@ class Blog
 		 puts post.date
 		 puts post.text
 		end
+	end
+
+	def make_page
+		page = @posts.each_slice(@postsperpage)
+		puts page
 	end
 
 end
@@ -51,8 +57,7 @@ end
 
 
 
-
-mariosblog = Blog.new("Mario", [])
+mariosblog = Blog.new("Mario", [], 3)
 
 firstpost = Post.new("First post", "", "Blablablabla")
 secondpost = Post.new("Second post", "", "Bleblebleble")
@@ -70,4 +75,5 @@ mariosblog.publish(fifthpost)
 
 
 mariosblog.show_posts
+
 
