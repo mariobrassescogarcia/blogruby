@@ -1,7 +1,9 @@
 
 
+
+
 class Post
-	attr_reader :tittle, :date, :text
+	attr_reader :tttle, :date, :text
 
 	def initialize (tittle, date, text)
 		@tittle = tittle
