@@ -11,7 +11,6 @@ class Post
 end
 
 
-
 class Blog 
 	attr_reader :blogger, :posts
 
@@ -35,12 +34,10 @@ class Blog
 
 	def make_page
 		page = @posts.each_slice(@postsperpage)
-		puts page
+		return page
 	end
 
 end
-
-
 
 
 class Sponsored < Post
@@ -55,8 +52,6 @@ class Sponsored < Post
 end
 
 
-
-
 mariosblog = Blog.new("Mario", [], 3)
 
 firstpost = Post.new("First post", "", "Blablablabla")
@@ -65,15 +60,11 @@ thirdpost = Post.new("Third post", "", "Blibliblibli")
 fourthpost = Post.new("Fourth post", "", "Bloblobloblo")
 fifthpost = Sponsored.new("Fifth post", "", "Blublublublu" )
 
-
-
 mariosblog.publish(firstpost)
 mariosblog.publish(secondpost)
 mariosblog.publish(thirdpost)
 mariosblog.publish(fourthpost)
 mariosblog.publish(fifthpost)
 
-
 mariosblog.show_posts
-
-
+mariosblog.make_page
