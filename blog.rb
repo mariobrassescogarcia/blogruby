@@ -71,6 +71,3 @@ mariosblog.publish(fifthpost)
 
 mariosblog.show_posts
 
-
-
-
